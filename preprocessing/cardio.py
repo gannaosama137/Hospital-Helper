@@ -27,3 +27,5 @@ def clustering_preprocessing(df):
     df = df[df['bmi'].between(10, 50)]
 
     return df , cluster_features 
+
+

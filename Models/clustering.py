@@ -14,6 +14,7 @@ from sklearn.decomposition import PCA
 ROOT = Path(__file__).resolve().parent.parent
 DATA_DIR = ROOT / "Data"
 file_path = DATA_DIR / "cardio_train.csv"
+
 PLOT_DIR = ROOT / "Plots"
 PLOT_DIR.mkdir(exist_ok=True)
 
