@@ -86,11 +86,19 @@ st.markdown(
     body,
     .stApp {
         color-scheme: light !important;
+        --background-color: #f5f8fb !important;
+        --secondary-background-color: #ffffff !important;
+        --text-color: #17324d !important;
+        --primary-color: #087e8b !important;
+        --border-color: #e1e9ef !important;
     }
 
-    .stApp {
-        background-color: #f5f8fb;
-        color: #17324d;
+    body,
+    .stApp,
+    [data-testid="stAppViewContainer"],
+    [data-testid="stMain"] {
+        background-color: #f5f8fb !important;
+        color: #17324d !important;
     }
 
     [data-testid="stHeader"] {
@@ -108,7 +116,7 @@ st.markdown(
     }
 
     [data-testid="stSidebar"] {
-        display: none;
+        display: none !important;
     }
 
     .block-container {
@@ -117,13 +125,19 @@ st.markdown(
         max-width: 1400px;
     }
 
-    h1, h2, h3, h4, p, label {
-        color: #17324d;
+    h1, h2, h3, h4, p, label,
+    [data-testid="stMarkdownContainer"],
+    [data-testid="stMarkdownContainer"] *,
+    [data-testid="stCaptionContainer"],
+    [data-testid="stCaptionContainer"] * {
+        color: #17324d !important;
     }
 
+    /* Metrics */
+
     [data-testid="stMetric"] {
-        background-color: #ffffff;
-        border: 1px solid #e1e9ef;
+        background-color: #ffffff !important;
+        border: 1px solid #e1e9ef !important;
         border-radius: 14px;
         padding: 15px;
     }
@@ -136,7 +150,7 @@ st.markdown(
         color: #17324d !important;
     }
 
-    /* Predict buttons */
+    /* Buttons */
 
     .stButton > button,
     .stFormSubmitButton > button,
@@ -167,9 +181,23 @@ st.markdown(
     input, textarea {
         background-color: #ffffff !important;
         color: #17324d !important;
+        border-color: #e1e9ef !important;
     }
 
     [data-baseweb="select"] > div {
+        background-color: #ffffff !important;
+        border-color: #e1e9ef !important;
+        color: #17324d !important;
+    }
+
+    [data-baseweb="select"] *,
+    [data-baseweb="popover"],
+    [data-baseweb="menu"] {
+        color: #17324d !important;
+    }
+
+    [data-baseweb="popover"],
+    [data-baseweb="menu"] {
         background-color: #ffffff !important;
     }
 
@@ -180,7 +208,8 @@ st.markdown(
     }
 
     .stTabs [data-baseweb="tab"] {
-        background-color: #ffffff;
+        background-color: #ffffff !important;
+        color: #17324d !important;
         border-radius: 9px 9px 0 0;
     }
 
@@ -193,10 +222,47 @@ st.markdown(
 
     [data-testid="stAlert"] {
         border-radius: 10px;
+        background-color: #eaf4f7 !important;
+        border: 1px solid #cfe1e6 !important;
+        color: #17324d !important;
     }
 
+    [data-testid="stAlert"] [data-testid="stMarkdownContainer"],
+    [data-testid="stAlert"] [data-testid="stMarkdownContainer"] * {
+        color: #17324d !important;
+    }
+
+    /* DataFrames and Tables */
+
+    [data-testid="stDataFrame"],
+    [data-testid="stTable"] {
+        background-color: #ffffff !important;
+        color: #17324d !important;
+        border: 1px solid #e1e9ef !important;
+        border-radius: 10px !important;
+        overflow: hidden !important;
+    }
+
+    [data-testid="stDataFrame"] *,
+    [data-testid="stTable"] * {
+        color: #17324d !important;
+    }
+
+    /* Charts */
+
+    [data-testid="stVegaLiteChart"] {
+        background-color: #ffffff !important;
+        color: #17324d !important;
+    }
+
+    [data-testid="stVegaLiteChart"] svg text {
+        fill: #17324d !important;
+    }
+
+    /* Dividers */
+
     hr {
-        border-color: #e1e9ef;
+        border-color: #e1e9ef !important;
     }
 
     </style>
