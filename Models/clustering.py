@@ -115,8 +115,13 @@ print(prof.T)
 
 # =====================Save the trained model=====================
 
-(ROOT / "Save_Models").mkdir(exist_ok=True)
-joblib.dump({"scaler": scaler, "model": km, "features": features},
-            ROOT / "Save_Models" / "cluster_model.pkl")
-print("Model saved.")
+SAVE_DIR = ROOT / "Save_Models"
+SAVE_DIR.mkdir(exist_ok=True)
 
+joblib.dump(
+    {
+         "scaler": scaler, "model": km, "features": features 
+    },
+    SAVE_DIR / "cluster_model.joblib" )
+
+print("Model saved successfully.")

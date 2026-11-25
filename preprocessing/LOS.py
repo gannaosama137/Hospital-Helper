@@ -14,9 +14,8 @@ from sklearn.feature_selection import SelectKBest, f_regression
 # 1. PROJECT CONFIGURATION
 # ==========================================
 
-PROJECT_DIR = Path(__file__).resolve().parent.parent
-
-DATA_PATH = PROJECT_DIR / "Data" / "LengthOfStay.csv"
+BASE_DIR = Path(__file__).resolve().parent.parent
+DATA_PATH = BASE_DIR / "Data" / "LengthOfStay.csv"
 
 TARGET = "lengthofstay"
 

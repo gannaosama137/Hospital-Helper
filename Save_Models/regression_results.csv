@@ -1,0 +1,4 @@
+Model,MAE,RMSE,R2,Best CV RMSE,Best Parameters
+Random Forest,0.8392053169462317,1.0851678794270683,0.7897794080244012,1.0811248550655812,"{'model__n_estimators': 200, 'model__min_samples_split': 2, 'model__min_samples_leaf': 4, 'model__max_features': 0.7, 'model__max_depth': 12}"
+Decision Tree,0.8458106236824274,1.096451878738464,0.7853847660115945,1.0982689022913767,"{'model__min_samples_split': 20, 'model__min_samples_leaf': 10, 'model__max_features': None, 'model__max_depth': 15}"
+KNN,0.8688544158380057,1.1754979916877868,0.7533249771922123,1.1784975318612025,"{'model__weights': 'distance', 'model__p': 1, 'model__n_neighbors': 21, 'model__leaf_size': 20}"

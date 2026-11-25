@@ -1,12 +1,6 @@
 import sys
 from pathlib import Path
 
-# Project paths
-PROJECT_DIR = Path(__file__).resolve().parent.parent
-
-# Add project root to Python path
-sys.path.insert(0, str(PROJECT_DIR))
-
 import numpy as np
 import pandas as pd
 import joblib
@@ -35,12 +29,20 @@ from preprocessing.LOS import (
     build_feature_selector
 )
 
-BASE_DIR = Path(__file__).resolve().parent
-MODELS_DIR = PROJECT_DIR / "Save_Models"
+BASE_DIR = Path(__file__).resolve().parent.parent
+
+DATA_DIR = BASE_DIR / "Data"
+PLOT_DIR = BASE_DIR / "Plots"
+MODELS_DIR = BASE_DIR / "Save_Models"
+
+PLOT_DIR.mkdir(exist_ok=True)
 MODELS_DIR.mkdir(exist_ok=True)
 
-RANDOM_STATE = 100
+file_path = DATA_DIR / "LengthOfStay.csv"
 
+
+
+RANDOM_STATE = 100
 
 
 # ---------- 2) data ----------
@@ -200,15 +202,15 @@ print(f"Best R2: {results_df.loc[0, 'R2']:.4f}")
 # ---------- 8) save ----------
 
 results_df.to_csv(
-    MODELS_DIR / "results.csv",
+    MODELS_DIR / "regression_results.csv",
     index=False
 )
 
 joblib.dump(
     trained[best_name],
-    MODELS_DIR / "best_model.joblib"
+    MODELS_DIR / "hospital_regression_model.joblib"
 )
 
-(MODELS_DIR / "best_model_name.txt").write_text(best_name)
+(MODELS_DIR / "best_regression_model_name.txt").write_text(best_name)
 
-print("\nAll models trained and saved successfully!")
+print("\nAll regression models trained and saved successfully!")
